@@ -100,4 +100,6 @@ dependencies {
 
     // live-event-bus
     implementation 'com.jeremyliao:live-event-bus-x:1.4.0'
+
+    implementation "androidx.work:work-runtime:2.5.0"
 }

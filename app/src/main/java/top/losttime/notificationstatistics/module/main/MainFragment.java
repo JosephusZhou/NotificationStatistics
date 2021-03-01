@@ -16,6 +16,8 @@ import top.losttime.notificationstatistics.R;
 import top.losttime.notificationstatistics.base.BaseFragment;
 import top.losttime.notificationstatistics.constant.Constants;
 import top.losttime.notificationstatistics.data.entity.NewNotificationEntity;
+import top.losttime.notificationstatistics.manager.DDWorker;
+import top.losttime.notificationstatistics.manager.ToastManager;
 import top.losttime.notificationstatistics.manager.WechatInfoManager;
 import top.losttime.notificationstatistics.util.NotificationUtils;
 
@@ -35,6 +37,8 @@ public class MainFragment extends BaseFragment {
     TextView tvCount;
     @BindView(R.id.btn_history)
     Button btnHistory;
+    @BindView(R.id.btn_dd)
+    Button btnDD;
 
 
     @Override
@@ -71,7 +75,7 @@ public class MainFragment extends BaseFragment {
         refreshStatus();
     }
 
-    @OnClick({R.id.btn_auth, R.id.btn_service, R.id.btn_history})
+    @OnClick({R.id.btn_auth, R.id.btn_service, R.id.btn_history, R.id.btn_dd})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_auth:
@@ -83,6 +87,11 @@ public class MainFragment extends BaseFragment {
                 break;
             case R.id.btn_history:
                 Navigation.findNavController(btnHistory).navigate(R.id.action_mainFragment_to_historyFragment);
+                break;
+            case R.id.btn_dd:
+                DDWorker.cancelJob();
+                DDWorker.setJob();
+                ToastManager.show(getContext(), "成功");
                 break;
             default:
                 break;

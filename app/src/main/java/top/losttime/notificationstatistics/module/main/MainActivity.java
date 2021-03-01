@@ -1,11 +1,12 @@
 package top.losttime.notificationstatistics.module.main;
 
-import java.util.Objects;
-
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
+
+import java.util.Objects;
+
 import top.losttime.notificationstatistics.R;
 import top.losttime.notificationstatistics.base.BaseToolbarActivity;
 

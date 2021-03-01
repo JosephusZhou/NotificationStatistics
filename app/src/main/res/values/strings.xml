@@ -14,6 +14,8 @@
     <string name="total_wechat_rp">已收到 wechat 红包：</string>
     <string name="newest_wechat_msg">最新的 wechat 消息：</string>
     <string name="check_history">查看历史</string>
+    <string name="evertday_dd">每日下午6:30钉钉唤醒打卡</string>
+    <string name="start_job">启动任务</string>
 
     <string name="wechat_history_msg">微信历史消息</string>
 </resources>
