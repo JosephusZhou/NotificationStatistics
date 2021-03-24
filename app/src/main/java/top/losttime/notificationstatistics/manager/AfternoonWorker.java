@@ -21,9 +21,9 @@ import top.losttime.notificationstatistics.MyApplication;
  * @date 3/1/21
  * @desc
  */
-public class DDWorker extends Worker {
+public class AfternoonWorker extends Worker {
 
-    public DDWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+    public AfternoonWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
     }
 
@@ -44,25 +44,6 @@ public class DDWorker extends Worker {
         Calendar dueDate = Calendar.getInstance();
 
         // 设置在大约 18:30:00 执行
-        dueDate.set(Calendar.HOUR_OF_DAY, 9);
-        dueDate.set(Calendar.MINUTE, 30);
-        dueDate.set(Calendar.SECOND, 0);
-
-        if (dueDate.before(currentDate)) {
-            dueDate.add(Calendar.HOUR_OF_DAY, 24);
-        }
-
-        long timeDiff = dueDate.getTimeInMillis() - currentDate.getTimeInMillis();
-        WorkRequest dailyWorkRequest1 = new OneTimeWorkRequest.Builder(DDWorker.class)
-                .setInitialDelay(timeDiff, TimeUnit.MILLISECONDS)
-                .addTag("ddWorker1")
-                .build();
-        WorkManager.getInstance(MyApplication.getInstance()).enqueue(dailyWorkRequest1);
-
-        currentDate = Calendar.getInstance();
-        dueDate = Calendar.getInstance();
-
-        // 设置在大约 18:30:00 执行
         dueDate.set(Calendar.HOUR_OF_DAY, 18);
         dueDate.set(Calendar.MINUTE, 30);
         dueDate.set(Calendar.SECOND, 0);
@@ -71,16 +52,12 @@ public class DDWorker extends Worker {
             dueDate.add(Calendar.HOUR_OF_DAY, 24);
         }
 
-        timeDiff = dueDate.getTimeInMillis() - currentDate.getTimeInMillis();
-        WorkRequest dailyWorkRequest2 = new OneTimeWorkRequest.Builder(DDWorker.class)
+        long timeDiff = dueDate.getTimeInMillis() - currentDate.getTimeInMillis();
+        WorkRequest dailyWorkRequest = new OneTimeWorkRequest.Builder(AfternoonWorker.class)
                 .setInitialDelay(timeDiff, TimeUnit.MILLISECONDS)
-                .addTag("ddWorker2")
+                .addTag("afternoonWorker")
                 .build();
-        WorkManager.getInstance(MyApplication.getInstance()).enqueue(dailyWorkRequest2);
+        WorkManager.getInstance(MyApplication.getInstance()).enqueue(dailyWorkRequest);
     }
 
-    public static void cancelJob() {
-        WorkManager.getInstance(MyApplication.getInstance()).cancelAllWorkByTag("ddWorker1");
-        WorkManager.getInstance(MyApplication.getInstance()).cancelAllWorkByTag("ddWorker2");
-    }
 }

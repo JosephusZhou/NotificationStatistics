@@ -80,12 +80,30 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_history" />
 
     <Button
-        android:id="@+id/btn_dd"
+        android:id="@+id/btn_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_8"
-        android:text="@string/start_job"
+        android:text="@string/cancel_job"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_everyday_dd" />
+
+    <Button
+        android:id="@+id/btn_start_morning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:text="@string/start_job_morning"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cancel" />
+
+    <Button
+        android:id="@+id/btn_start_afternoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:text="@string/start_job_afternoon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start_morning" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
