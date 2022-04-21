@@ -1,23 +1,22 @@
 <resources>
-    <string name="app_name">微信统计</string>
+    <string name="app_name">靓仔工具箱</string>
 
-    <string name="current_time">当前系统时间：</string>
-    <string name="current_auth_status">当前授权状态：</string>
+    <string name="current_auth_status">微信通知授权状态：</string>
     <string name="success">成功</string>
     <string name="fail">失败</string>
     <string name="to_auth">前往授权</string>
-    <string name="current_service_status">当前服务状态：</string>
+    <string name="current_service_status">微信通知服务状态：</string>
     <string name="running">运行中</string>
     <string name="no_running">未运行</string>
     <string name="restart_service">重启服务</string>
     <string name="total_wechat_msg">已收到 wechat 消息：</string>
     <string name="total_wechat_rp">已收到 wechat 红包：</string>
     <string name="newest_wechat_msg">最新的 wechat 消息：</string>
-    <string name="check_history">查看历史</string>
-    <string name="evertday_dd">钉钉唤醒打卡：</string>
-    <string name="cancel_job">取消任务</string>
+    <string name="check_history">查看微信通知历史</string>
+    <string name="everyday_dd">Lark唤醒打卡：</string>
     <string name="start_job_morning">刷新上午任务</string>
     <string name="start_job_afternoon">刷新下午任务</string>
+    <string name="cancel_job">取消任务</string>
 
     <string name="wechat_history_msg">微信历史消息</string>
 </resources>
